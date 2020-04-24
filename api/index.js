@@ -21,6 +21,7 @@ Router.use("/posts", posts);
 App.use("/", Router); // path must route to lambda
 //error middlewares
 App.use(ErroHandler);
+console.log(process.env.MYSQL_HOST);
 
 App.listen(config.api.port, () => {
   console.log(`Api listening on port ${config.api.port}`);
