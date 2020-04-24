@@ -89,6 +89,7 @@ dist/
 
 # Storybook build outputs
 .out
+a
 .storybook-out
 
 # vuepress build output
