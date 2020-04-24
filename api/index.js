@@ -18,13 +18,10 @@ App.use(cors());
 //routes
 
 Router.use("/posts", posts);
+App.use("/", Router); // path must route to lambda
 //error middlewares
 App.use(ErroHandler);
-App.use("/.netlify/functions/server", Router); // path must route to lambda
 
 App.listen(config.api.port, () => {
   console.log(`Api listening on port ${config.api.port}`);
 });
-
-module.exports = App;
-module.exports.handler = serverless(App);
